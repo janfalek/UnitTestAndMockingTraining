@@ -20,7 +20,7 @@ namespace TrainingSamples.BackgroundWorker
             eventAggregator.Subscribe(this);
         }
 
-        public Task Start(
+        public async Task Start(
             Action<CancellationToken, IProgress<ProgressMessage>> workAction,
             Action<Task, CancellationToken, IProgress<ProgressMessage>> continueWith = null)
         {
@@ -31,7 +31,7 @@ namespace TrainingSamples.BackgroundWorker
 
             var token = _cancellationTokenSource.Token;
 
-            var task = Task.Factory.StartNew(() =>
+            await Task.Factory.StartNew(() =>
             {
                 lock (_locker)
                 {
@@ -50,7 +50,6 @@ namespace TrainingSamples.BackgroundWorker
                 _backgroundWorkerAbort.CancelAbortion();
                 ReleseResources();
             });
-            return task;
         }
 
         public void Handle(BackgroundWorkerCancellationMessage message)
