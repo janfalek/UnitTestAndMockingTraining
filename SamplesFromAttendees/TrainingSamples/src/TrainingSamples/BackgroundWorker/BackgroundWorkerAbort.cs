@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace TrainingSamples.BackgroundWorker
 {
-    public class BackgroundWorkerAbort
+    public class BackgroundWorkerAbort : IBackgroundWorkerAbort
     {
         private readonly ManualResetEvent waitHandle;
         private int seconds = 5;
