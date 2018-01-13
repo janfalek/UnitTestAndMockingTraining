@@ -8,12 +8,12 @@ namespace TrainingSamples.BackgroundWorker
     public class PluginBackgroundWorker
     {
         private readonly IProgress<ProgressMessage> _progress;
-        private readonly BackgroundWorkerAbort _backgroundWorkerAbort;
+        private readonly IBackgroundWorkerAbort _backgroundWorkerAbort;
         private Thread _backgroundThread;
         private CancellationTokenSource _cancellationTokenSource;
         private object _locker = new object();
 
-        public PluginBackgroundWorker(IProgress<ProgressMessage> progress, BackgroundWorkerAbort backgroundWorkerAbort, IEventAggregator eventAggregator)
+        public PluginBackgroundWorker(IProgress<ProgressMessage> progress, IBackgroundWorkerAbort backgroundWorkerAbort, IEventAggregator eventAggregator)
         {
             _progress = progress;
             _backgroundWorkerAbort = backgroundWorkerAbort;
