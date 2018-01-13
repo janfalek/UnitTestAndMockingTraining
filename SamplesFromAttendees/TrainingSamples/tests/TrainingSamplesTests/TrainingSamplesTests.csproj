@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asynch\NightmareAsynchTests1.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="BackgroundWorkerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

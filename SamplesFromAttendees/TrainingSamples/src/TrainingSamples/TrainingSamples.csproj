@@ -70,6 +70,7 @@
     <Compile Include="BackgroundWorker\BackgroundMessageType.cs" />
     <Compile Include="BackgroundWorker\BackgroundWorkerAbort.cs" />
     <Compile Include="BackgroundWorker\BackgroundWorkerCancellationMessage.cs" />
+    <Compile Include="BackgroundWorker\IBackgroundWorkerAbort.cs" />
     <Compile Include="BackgroundWorker\PluginBackgroundWorker.cs" />
     <Compile Include="BackgroundWorker\ProgressMessage.cs" />
     <Compile Include="Moq\Events\DesignContextChanged.cs" />
